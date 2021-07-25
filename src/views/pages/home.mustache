@@ -1,0 +1,37 @@
+{{> partials/header }}
+<p>Olá {{ user.name }} {{user.lastName}}, voce ja tem {{age}} anos? </p>
+
+{{#showOld}}
+<p>Como vai a vida?</p>
+{{/showOld}}
+{{^showOld}}
+<p>Aproveita a sua juventude</p>
+{{/showOld}}
+<hr>
+
+<h4>Lista de Produtos</h4>
+<ul>
+    {{#products}}
+    <li>{{title}} - R$ {{price}}</li>
+    {{/products}}
+</ul>
+<hr>
+
+<h4>Lista de Produtos a partir de R$ 12</h4>
+<ul>
+    {{#expensives}}
+    <li>{{title}} - R$ {{price}}</li>
+    {{/expensives}}
+</ul>
+<hr>
+
+<h4>Frases Motivacionais</h4>
+<ul>
+    {{#frasesDoDia}}
+    <li>{{.}}</li>
+    {{/frasesDoDia}}
+    {{^frasesDoDia}}
+    <li>Desculpe! Não temos frases para hoje!</li>
+    {{/frasesDoDia}}
+</ul>
+{{> partials/footer }}
